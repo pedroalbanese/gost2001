@@ -5,4 +5,4 @@ Package implements the elliptic curves originally described in RFC4357
 
 This project is licensed under the ISC License.
 
-##### Industrial-Grade Reliability. Copyright (c) 2020-2021 ALBANESE Research Lab.
+##### Industrial-Grade Reliability. Copyright (c) 2020-2022 ALBANESE Research Lab.
