@@ -50,7 +50,7 @@ func main() {
 
 	if *keygen {
 		if *key != "" {
-			privatekey, err = ReadPrivateKeyFromHex160(*key)
+			privatekey, err = ReadPrivateKeyFromHex(*key)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -61,23 +61,23 @@ func main() {
 				fmt.Println(err)
 				os.Exit(1)
 			}
-			if len(WritePrivateKeyToHex160(privatekey)) != 64 {
+			if len(WritePrivateKeyToHex(privatekey)) != 64 {
 				log.Fatal("Private key too short!")
 				os.Exit(1)
 			}
 		}
 		pubkey = privatekey.PublicKey
-		fmt.Println("Private= " + WritePrivateKeyToHex160(privatekey))
-		fmt.Println("Public= " + WritePublicKeyToHex160(&pubkey))
+		fmt.Println("Private= " + WritePrivateKeyToHex(privatekey))
+		fmt.Println("Public= " + WritePublicKeyToHex(&pubkey))
 		os.Exit(0)
 	}
 
 	if *derive {
-		private, err := ReadPrivateKeyFromHex160(*key)
+		private, err := ReadPrivateKeyFromHex(*key)
 		if err != nil {
 			log.Fatal(err)
 		}
-		public, err := ReadPublicKeyFromHex160(*public)
+		public, err := ReadPublicKeyFromHex(*public)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -96,7 +96,7 @@ func main() {
 			panic(err)
 		}
 
-		privatekey, err = ReadPrivateKeyFromHex160(*key)
+		privatekey, err = ReadPrivateKeyFromHex(*key)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -117,7 +117,7 @@ func main() {
 			panic(err)
 		}
 
-		pub, err = ReadPublicKeyFromHex160(*key)
+		pub, err = ReadPublicKeyFromHex(*key)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -160,7 +160,7 @@ func Verify(data, signature []byte, pubkey *ecdsa.PublicKey) bool {
 	return ecdsa.Verify(pubkey, digest[:], r, s)
 }
 
-func ReadPrivateKeyFromHex160(Dhex string) (*ecdsa.PrivateKey, error) {
+func ReadPrivateKeyFromHex(Dhex string) (*ecdsa.PrivateKey, error) {
 	c := gost2001.GOST2001A()
 	d, err := hex.DecodeString(Dhex)
 	if err != nil {
@@ -180,7 +180,7 @@ func ReadPrivateKeyFromHex160(Dhex string) (*ecdsa.PrivateKey, error) {
 	return priv, nil
 }
 
-func WritePrivateKeyToHex160(key *ecdsa.PrivateKey) string {
+func WritePrivateKeyToHex(key *ecdsa.PrivateKey) string {
 	d := key.D.Bytes()
 	if n := len(d); n < 32 {
 		d = append(zeroByteSlice()[:64-n], d...)
@@ -190,7 +190,7 @@ func WritePrivateKeyToHex160(key *ecdsa.PrivateKey) string {
 	return hex.EncodeToString(c)
 }
 
-func ReadPublicKeyFromHex160(Qhex string) (*ecdsa.PublicKey, error) {
+func ReadPublicKeyFromHex(Qhex string) (*ecdsa.PublicKey, error) {
 	q, err := hex.DecodeString(Qhex)
 	if err != nil {
 		return nil, err
@@ -208,7 +208,7 @@ func ReadPublicKeyFromHex160(Qhex string) (*ecdsa.PublicKey, error) {
 	return pub, nil
 }
 
-func WritePublicKeyToHex160(key *ecdsa.PublicKey) string {
+func WritePublicKeyToHex(key *ecdsa.PublicKey) string {
 	x := key.X.Bytes()
 	y := key.Y.Bytes()
 	if n := len(x); n < 32 {
