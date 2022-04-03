@@ -4,7 +4,7 @@
 [![GitHub downloads](https://img.shields.io/github/downloads/pedroalbanese/gost2001/total.svg?logo=github&logoColor=white)](https://github.com/pedroalbanese/gost2001/releases)
 [![Go Report Card](https://goreportcard.com/badge/github.com/pedroalbanese/gost2001)](https://goreportcard.com/report/github.com/pedroalbanese/gost2001)
 
-### GOST R 34.10-2001 CryptoPro ParamSet Public key algorithm
+### GOST R 34.10-2001 CryptoPro ParamSets (January 2006)
 Package implements the elliptic curves originally described in RFC4357
 
 ## License
