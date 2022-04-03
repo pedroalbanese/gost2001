@@ -1,5 +1,5 @@
 # GOST2001
-### GOST R 34.10-2001 CryptoPro
+### GOST R 34.10-2001 CryptoPro ParamSets (2006)
 Package implements the elliptic curves originally described in RFC4357
 
 ## License
