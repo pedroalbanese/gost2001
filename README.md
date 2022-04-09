@@ -7,6 +7,40 @@
 ### GOST R 34.10-2001 CryptoPro ParamSets (January 2006)
 Package implements the elliptic curves originally described in RFC4357
 
+### Usage:
+```
+Usage of gost2001:
+  -derive
+        Derive shared secret.
+  -key string
+        Private/Public key.
+  -keygen
+        Generate keypair.
+  -pub string
+        Remote's side Public key.
+  -sign
+        Sign with Private key.
+  -signature string
+        Signature.
+  -verify
+        Verify with Public key.
+```
+### Examples:
+#### Asymmetric keypair generation (as ECDSA):
+```sh
+./gost2001 -keygen 
+```
+#### Digital signature (ECDSA):
+```sh
+./gost2001 -sign -key $prvkey < file.ext > sign.txt
+sign=$(cat sign.txt)
+./gost2001 -verify -key $pubkey -signature $sign < file.ext
+```
+#### Shared key agreement (ECDH a.k.a. VKO):
+```sh
+./gost2001 -derive -key $prvkey -pub $pubkey
+```
+
 ## License
 
 This project is licensed under the ISC License.
