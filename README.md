@@ -7,7 +7,7 @@
 ### GOST R 34.10-2001 CryptoPro ParamSets (January 2006)
 Package implements the elliptic curves originally described in RFC4357
 
-### Usage:
+## Usage:
 ```
 Usage of gost2001:
   -derive
@@ -25,8 +25,8 @@ Usage of gost2001:
   -verify
         Verify with Public key.
 ```
-### Examples:
-#### Asymmetric keypair generation (as ECDSA):
+## Examples:
+#### Asymmetric keypair generation:
 ```sh
 ./gost2001 -keygen 
 ```
