@@ -1,8 +1,9 @@
 # GOST2001
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://github.com/pedroalbanese/gost2001/blob/master/LICENSE.md) 
-[![GoDoc](https://godoc.org/github.com/pedroalbanese/gost2001?status.png)](http://godoc.org/github.com/pedroalbanese/gost2001)
 [![GitHub downloads](https://img.shields.io/github/downloads/pedroalbanese/gost2001/total.svg?logo=github&logoColor=white)](https://github.com/pedroalbanese/gost2001/releases)
+[![GoDoc](https://godoc.org/github.com/pedroalbanese/gost2001?status.png)](http://godoc.org/github.com/pedroalbanese/gost2001)
 [![Go Report Card](https://goreportcard.com/badge/github.com/pedroalbanese/gost2001)](https://goreportcard.com/report/github.com/pedroalbanese/gost2001)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/pedroalbanese/gost2001)](https://github.com/pedroalbanese/gost2001/releases)
 
 ### GOST R 34.10-2001 CryptoPro ParamSets (January 2006)
 Package implements the elliptic curves originally described in RFC4357
