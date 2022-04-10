@@ -6,9 +6,9 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/pedroalbanese/gost2001)](https://github.com/pedroalbanese/gost2001/releases)
 
 ### GOST R 34.10-2001 CryptoPro ParamSets (January 2006)
-Package implements the elliptic curves originally described in RFC4357
+Package implements the elliptic curves originally described in RFC 4357
 
-## Usage:
+## Usage
 ```
 Usage of gost2001:
   -derive
@@ -26,7 +26,7 @@ Usage of gost2001:
   -verify
         Verify with Public key.
 ```
-## Examples:
+## Examples
 #### Asymmetric keypair generation:
 ```sh
 ./gost2001 -keygen 
